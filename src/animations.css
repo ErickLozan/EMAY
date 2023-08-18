@@ -1,0 +1,44 @@
+.animatedLeft {
+    animation: moveAndOpacityLeft 1.3s ease-out;
+}
+
+@keyframes moveAndOpacityLeft {
+    0% {
+        transform: translateX(-150px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animatedRight {
+    animation: moveAndOpacityRight 1.3s ease-out;
+}
+
+@keyframes moveAndOpacityRight {
+    0% {
+        transform: translateX(150px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animatedProfile {
+    animation: animateProfile 5s infinite;
+}
+
+@keyframes animateProfile {
+    0%, 100% {
+        transform: translateY(15px);
+        animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1); /* Efecto de aceleración constante */
+      }
+      50% {
+        transform: translateY(-5px);
+        animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1); /* Efecto de aceleración constante */
+      }
+}

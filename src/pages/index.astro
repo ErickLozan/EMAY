@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../animations.css'
+---
+
+<Layout title="Gestoría de Negocios | EMAY" logoPath="images/generalLOGO.png" logoAutosPath="images/emayVLogo.png">
+	<section class="flex gap-32 justify-center items-center h-screen bg-cover bg-no-repeat bg-black bg-opacity-70 bg-blend-darken max-lg:flex-col max-lg:gap-5" style="background-image: url('images/emayBG.jpg');">
+			<div class="animatedLeft max-lg:text-center">
+				<p class="text-gray-400">BIENVENIDO A</p>
+				<h2 class="text-gray-200 text-9xl mb-7 max-sm:text-7xl" style="font-family: 'Ubuntu', Arial;">¡E<span class="text-blue-800">M</span>AY!</h2>
+				<p class="text-gray-200 px-3"><a id="link" class="transition-all duration-[400ms]" href="/gestorias">TRÁMITES VEHICULARES</a> | <a id="link" class="transition-all duration-[400ms]" href="/gestorias">INMUEBLES</a> | <a id="link" class="transition-all duration-[400ms]" href="/seguros">SEGUROS</a> | <a id="link" class="transition-all duration-[400ms]" href="/cursos">CURSOS</a></p>
+			</div>
+			<div class="animatedRight">
+				<div class="w-[20rem] h-[20rem] rounded-full bg-cover transition-all animatedProfile max-sm:w-[17rem] max-sm:h-[17rem]" style="background-image: url('images/profile.jpg'); background-position: 50% 20%; background-size: 110%;">
+
+				</div>
+			</div>
+	</section>
+	<section class="p-8 bg-gradient-to-r from-gray-950 to-gray-900">
+		<div class="flex items-center max-lg:flex-col max-lg:gap-5">
+			<div class="flex flex-col gap-5">
+				<h2 id="QSTitle" class="text-gray-200 text-5xl mb-3 transition-all duration-700 opacity-0">¿QUIÉNES SOMOS?</h2>
+				<p id="QSContent" class="text-gray-400 min-w-[50%] transition-all duration-700 opacity-0 max-lg:pl-0">Aliado estrategico en servicios de gestoría vehicular, inmuebles, seguros y cursos. Contamos con un equipo de profesionales con amplia experiencia, altamente capacitados y comprometidos, Brindamos soluciones integrales y personalizadas, destacamos por nuestra eficiencia, confiabilidad y atención al detalle, ética, transparencia y profesionalismo, priorizando siempre el cumplimiento de los requisitos legales y los estándares de Calidad.</p>
+			</div>
+			<div id="QSVideo" class="min-w-[50%] flex justify-center transition-all duration-700 opacity-0">
+				<video class="w-[20rem]" src="videos/video.mp4" controls />
+			</div>
+		</div>
+	</section>
+	<div class="flex p-5 bg-cover bg-center bg-black bg-opacity-70 bg-blend-darken max-lg:flex-col max-lg:gap-5" style="background-image: url('images/misionVisionBG.jpg');">
+		<div id="mision" class="w-[50%] transition-all duration-700 opacity-0 translate-y-3 max-lg:w-full">
+			<h3 class="text-white text-3xl" style="text-shadow: 0 0 5px white;">MISIÓN</h3>
+			<p class="text-white">Ofrecer soluciones integrales de gestoría vehicular, inmuebles, seguros y capacitación, eficientes y confiables, facilitando y agilizando trámites y procesos, siempre con excelencia y calidad en nuestros servicios. Trabajamos con ética, profesionalismo y responsabilidad, aliado estratégico de nuestros clientes en todas sus gestiones.</p>
+		</div>
+		<div id="vision" class="w-[50%] transition-all duration-700 opacity-0 translate-y-3 max-lg:w-full">
+			<h3 class="text-white text-3xl" style="text-shadow: 0 0 5px white;">VISIÓN</h3>
+			<p class="text-white">Posicionarnos como líderes en gestorías vehiculares, inmuebles, seguros y capacitación, reconocidos por nuestra eficiencia, calidad, confiabilidad e innovación. Buscamos ser la opción preferida de nuestros clientes, brindado la mejor experiencia con soluciones personalizadas y de vanguardia, expandir nuestra presencia nacional e internacional, generando alianzas estratégicas y consolidando nuestra presencia en diferentes sectores y mercados.</p>
+		</div>
+	</div>
+	<style>
+		#link:hover {
+			text-shadow: 0 0 5px white;
+		}
+	</style>
+</Layout>

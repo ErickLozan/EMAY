@@ -1,0 +1,199 @@
+---
+const {title, bgHeader, bgColor, logoPath, logoAutosPath } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="en" id="html"> 
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Joan&family=Montserrat+Alternates:wght@300&family=Montserrat:wght@400;700&family=Nunito:wght@200&family=Paytone+One&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+	<link rel="icon" href="../icon.png">
+	<title>{title}</title>
+</head>
+<body class={bgColor}>
+	<header id="headerLayout" class=`fixed w-full transition-all duration-500 z-10 ${bgHeader}`>
+		<div class="flex justify-between items-center py-1 w-[80%] max-sm:w-[90%]" style="margin: 0 auto;">
+			<a href="/"><img id="logoLayout" class="w-[15rem] transition-all duration-500 rounded-sm" src={logoPath} alt="logo"></a>
+			<nav id="navResponsive" class="max-md:bg-black max-md:bg-opacity-70 max-md:fixed max-md:left-0 max-md:top-[-100vh] max-md:w-full max-md:h-screen transition-all duration-500">
+				<ul class="flex max-md:items-center max-md:flex-col max-md:gap-10 max-md:mt-20">
+					<li id="gestoriasToggle" class="flex items-center">
+						<div id="linksLayout1" class="text-slate-300 py-4 px-5 transition-all hover:bg-slate-500 hover:bg-opacity-20 hover:text-white max-md:text-3xl cursor-pointer">Gestorías</div>
+						<div id="gestoriasOptions" class="absolute hidden top-[60px] max-md:top-[152px]">
+							<div class="flex flex-col bg-white rounded">
+								<a href="/gestorias/tramites-vehiculares" class="transition-all duration-300 p-3 rounded hover:bg-gray-100 border-b-gray-500">Trámites vehiculares</a>
+								<hr>
+								<a href="/gestorias/inmuebles" class="transition-all duration-300 p-3 rounded hover:bg-gray-100">Inmuebles</a>
+							</div>
+						</div>
+					</li>
+					<li class="flex items-center"><a id="linksLayout2" class="text-slate-300 py-4 px-5 transition-all duration-300 hover:bg-slate-500 hover:bg-opacity-20 hover:text-white max-md:text-3xl" href="/seguros">Seguros</a></li>
+					<li class="flex items-center"><a id="linksLayout3" class="text-slate-300 py-4 px-5 transition-all duration-300 hover:bg-slate-500 hover:bg-opacity-20 hover:text-white max-md:text-3xl" href="/cursos">Cursos</a></li>
+				</ul>
+			</nav>
+			<button id="btnNavBarResponsive" class="hidden text-white z-10 max-md:flex flex-col gap-[5px]">
+				<div id="line1" class="h-[2px] w-6 bg-white transition-all duration-500"></div>
+				<div id="line2" class="h-[2px] w-6 translate-x-[-5px] bg-white transition-all duration-500"></div>
+				<div id="line3" class="h-[2px] w-6 bg-white transition-all duration-500"></div>
+			</button>
+		</div>
+	</header>
+
+	<slot />
+
+	<footer class="bg-gray-800 flex flex-col items-center gap-6 py-5">
+		<a class="flex flex-col justify-center items-center gap-1 text-gray-300 hover:text-white transition-all" href="https://wa.me/522293656297" target="_blank">
+			<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+				<path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+			</svg>
+			Contáctame
+		</a>
+		<img class="w-[25rem]" src={logoAutosPath} alt="vehicleLogo">
+		<span class="text-gray-500">&copy; Copyright 2023 | EMAY Gestoría de Negocios</span>
+	</footer>
+
+	<style>
+		#gestoriasOptions {
+			opacity: 0;
+			transition: all 500ms ease-in-out;
+		}
+
+		#gestoriasToggle:hover #gestoriasOptions {
+			opacity: 1;
+			display: block;
+		}
+	</style>
+	<!--<script src="../JavaScript/animations.js"></script>
+	<script src="../JavaScript/sendToApi.js"></script>-->
+	<script>
+		window.addEventListener('scroll', () => {
+			const scrollTop = window.scrollY
+
+			const headerLayout = document.getElementById('headerLayout')
+			const linksLayout1 = document.getElementById('linksLayout1')
+			const linksLayout2 = document.getElementById('linksLayout2')
+			const linksLayout3 = document.getElementById('linksLayout3')
+
+			if(scrollTop > 30) {
+				headerLayout.classList.add('bg-blue-900')
+
+				linksLayout1.classList.remove('hover:bg-slate-500')
+				linksLayout1.classList.add('hover:bg-gray-900')
+				linksLayout2.classList.remove('hover:bg-slate-500')
+				linksLayout2.classList.add('hover:bg-gray-900')
+				linksLayout3.classList.remove('hover:bg-slate-500')
+				linksLayout3.classList.add('hover:bg-gray-900')
+			} else {
+				headerLayout.classList.remove('bg-blue-900')
+
+				linksLayout1.classList.add('hover:bg-slate-500')
+				linksLayout1.classList.remove('hover:bg-gray-900')
+				linksLayout2.classList.add('hover:bg-slate-500')
+				linksLayout2.classList.remove('hover:bg-gray-900')
+				linksLayout3.classList.add('hover:bg-slate-500')
+				linksLayout3.classList.remove('hover:bg-gray-900')
+			}
+
+			const QSTitle = document.getElementById('QSTitle')
+			const QSVideo = document.getElementById('QSVideo')
+			const QSContent = document.getElementById('QSContent')
+
+			if (scrollTop < 300) {
+				QSTitle.classList.add('opacity-0')
+				QSTitle.classList.add('translate-y-5')
+			} else {
+				QSTitle.classList.remove('opacity-0')
+				QSTitle.classList.remove('translate-y-5')
+			}
+
+			if (scrollTop < 330) {
+				QSVideo.classList.add('opacity-0')
+				QSVideo.classList.add('translate-y-5')
+			} else {
+				QSVideo.classList.remove('opacity-0')
+				QSVideo.classList.remove('translate-y-5')
+			}
+
+			if (scrollTop < 360) {
+				QSContent.classList.add('opacity-0')
+				QSContent.classList.add('translate-y-5')
+			} else {
+				QSContent.classList.remove('opacity-0')
+				QSContent.classList.remove('translate-y-5')
+			}
+
+			const mision = document.getElementById('mision')
+			const vision = document.getElementById('vision')
+
+			if (scrollTop > 750) {
+				mision.classList.remove('opacity-0')
+				mision.classList.remove('translate-y-3')
+			} else {
+				mision.classList.add('translate-y-3')
+				mision.classList.add('opacity-0')
+			}
+
+			if (scrollTop > 780) {
+				vision.classList.remove('opacity-0')
+				vision.classList.remove('translate-y-3')
+			} else {
+				vision.classList.add('translate-y-3')
+				vision.classList.add('opacity-0')
+			}
+		})
+
+		const btnNav = document.getElementById('btnNavBarResponsive')
+		const navResponsive = document.getElementById('navResponsive')
+		const line1 = document.getElementById('line1')
+		const line2 = document.getElementById('line2')
+		const line3 = document.getElementById('line3')
+
+		btnNav.addEventListener('click', () => {
+			line1.classList.toggle('rotate-45')
+			line1.classList.toggle('translate-y-[7px]')
+
+			line2.classList.toggle('translate-x-[-5px]')
+			line2.classList.toggle('opacity-0')
+
+			line3.classList.toggle('-rotate-45')
+			line3.classList.toggle('translate-y-[-7px]')
+
+			navResponsive.classList.toggle('max-md:top-[-100vh]')
+			navResponsive.classList.toggle('max-md:top-[0]')
+
+			document.getElementById('html').classList.toggle('overflow-hidden')
+		})
+
+		//SET TO API
+
+		import axios from 'axios'
+
+		document.getElementById('form').addEventListener('submit', (e) => {
+			e.preventDefault();
+
+			const subject = document.getElementById('tema').value
+			const text = document.getElementById('descripcion').value
+			const tramite = document.getElementById('tramite').value
+
+			document.getElementById('result').innerHTML = `
+			<p>Cargando ...</p>
+			`
+
+			axios.post('http://localhost:443/', {
+				subject,
+				text,
+				tramite
+			})
+			.then(response => {
+				document.getElementById('result').innerHTML = `
+				<p class='text-green-800'>${response.data}</p>
+				`
+			})
+			.catch(err => console.error(err))
+		})
+	</script>
+</body>
+</html>

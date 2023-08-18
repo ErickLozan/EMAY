@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title="Gestorías | EMAY" bgHeader="bg-gray-800" bgColor="bg-slate-200" logoPath="images/generalLOGO.png" logoAutosPath="images/emayVLogo.png">
+    <div class="w-[85%]" style="margin: 0 auto;">
+        <h1 class="pt-28 text-6xl">Cursos</h1>
+        <form id="form">
+            <!--<input type="text" placeholder="Nombre">
+            <input type="text" placeholder="Teléfono celular">
+            <input type="email" placeholder="Correo electrónico">
+            <textarea placeholder="Breve descripción del servicio que requiere ..."></textarea>-->
+            <input type="text" name="subject" id="tema" placeholder='tema'>
+            <textarea name="text" id="descripcion" placeholder="descripcion"></textarea>
+            <select name="tramite" id="tramite">
+                <option value="Opcion 1">Opcion 1</option>
+                <option value="Opcion 2">Opcion 2</option>
+            </select>
+            <input type="file" id="archivo" name="archivo">
+
+            <input type="submit" value="Enviar">
+        </form>
+        <div id="result">
+
+        </div>
+    </div>
+</Layout>
